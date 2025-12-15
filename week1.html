@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen text-white relative">
+  <!-- background image -->
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./assets/background.jpg');"
+  >
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-14">
+    <!-- header -->
+    <div class="flex items-center justify-between gap-4 mb-10">
+      <div>
+        <p class="text-white/60 text-sm">Documentatie</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+      </div>
+
+      <a href="documentatie.html" class="text-white/80 hover:text-white transition">
+        ← Terug naar overzicht
+      </a>
+    </div>
+
+    <!-- content card -->
+    <section class="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl">
+      <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
+
+      <p class="text-white/80 leading-relaxed">
+        Tijdens de eerste lesweek kregen we een uitgebreide uitleg over de opdracht. In diezelfde week zijn we al gestart met het uitwerken van low-fidelity ontwerpen voor drie schermen: het overzichtsscherm, het persoonscherm en het wagonscherm. Deze eerste schetsen waren bewust eenvoudig en schematisch, omdat ze bedoeld waren om de basisstructuur en functionaliteit vast te leggen. Ze vormden een belangrijk startpunt in ons ontwerpproces.
+      </p>
+    </section>
+
+    <!-- optioneel: extra blokken -->
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold mb-2">Wat ging goed?</h3>
+        <p class="text-white/70 text-sm">
+          (Schrijf hier kort wat goed ging.)
+        </p>
+      </section>
+
+      <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
+        <p class="text-white/70 text-sm">
+          (Schrijf hier wat je volgende week gaat doen.)
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+
+<body
+  class="text-gray-800 bg-cover bg-center bg-no-repeat min-h-screen"
+  style="background-image: url('assets/background.jpg');"
+>
+
+
+  <!-- NAVBAR -->
+<header class="bg-blue-950/90 backdrop-blur shadow-md">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col items-center gap-3">
+
+    <!-- Titel -->
+   <h1
+  class="text-3xl font-extrabold
+         bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-gradient">
+  Lost in Tra(i)nslation
+</h1>
+
+
+    <!-- Navigatie -->
+    <nav class="flex gap-8 text-sm font-semibold text-blue-100">
+      <a
+        href="#home"
+        class="hover:text-cyan-400 transition"
+      >
+        Home
+      </a>
+      <a
+        href="#over"
+        class="hover:text-cyan-400 transition"
+      >
+        Over het vak
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO / BOVENSTUK -->
+<section
+  id="home"
+  class="relative text-white"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-blue-950/80"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
+
+    <!-- TEKST -->
+    <div class="flex-1">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Welkom op mijn ontwerp documentatie 👋
+      </h2>
+
+      <p class="mb-6 text-blue-100 max-w-lg">
+        Ik ben Ivanna Torous van 1GDM2. Op deze website documenteer ik mijn ontwerpproces voor het vak
+        Prototyping Tools. Ik toon mijn stappen, keuzes en het eindresultaat
+        van de opdracht.
+      </p>
+
+      <a
+        href="documentatie.html"
+        class="inline-flex items-center gap-2 bg-cyan-400 text-blue-950 px-6 py-3 rounded-xl font-semibold shadow hover:bg-cyan-300 hover:scale-105 transition"
+      >
+        Bekijk mijn documentatie →
+      </a>
+    </div>
+
+    <!-- INFO BLOK -->
+    <div class="flex-1">
+      <div class="bg-white/90 backdrop-blur text-gray-900 rounded-2xl shadow-xl p-6">
+        <p class="font-semibold mb-3">Wat vind je op deze site?</p>
+        <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
+          <li>Uitleg over het vak Prototyping Tools</li>
+          <li>Mijn ontwerpproces en iteraties</li>
+          <li>Het eindresultaat van de opdracht</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+ <!-- KAARTJES / PROJECTEN -->
+<section id="over" class="py-12 bg-blue-900/40 backdrop-blur-sm">
+  <div class="max-w-5xl mx-auto px-4">
+    <h3 class="text-2xl font-bold mb-6 text-white">
+      Waarover gaat dit vak?
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-blue-950/80 text-white rounded-xl p-5 shadow-xl">
+        <h4 class="font-semibold mb-2">
+          Prototyping Tools
+        </h4>
+        <p class="text-sm text-blue-100">
+          Prototyping Tools 1 is een vak waarin we leren hoe we ideeën kunnen
+          omzetten naar visuele en interactieve prototypes. We werken stap voor
+          stap aan digitale ontwerpen en leren hoe we deze kunnen testen en verbeteren.
+        </p>
+      </div>
+
+      <div class="bg-blue-950/80 text-white rounded-xl p-5 shadow-xl">
+        <h4 class="font-semibold mb-2">
+          Ontwerpen & Tools
+        </h4>
+        <p class="text-sm text-blue-100">
+          Tijdens het vak maken we gebruik van tools zoals Figma en code
+          om interfaces en websites te ontwerpen. We leren hoe ontwerp en
+          techniek samenwerken binnen digitale media.
+        </p>
+      </div>
+
+      <div class="bg-blue-950/80 text-white rounded-xl p-5 shadow-xl">
+        <h4 class="font-semibold mb-2">
+          Proces & Reflectie
+        </h4>
+        <p class="text-sm text-blue-100">
+          Het proces staat centraal: van eerste idee tot eindresultaat.
+          We documenteren onze keuzes, testen prototypes en reflecteren
+          op gebruiksvriendelijkheid en design.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- CONTACT -->
+<section id="contact" class="py-16">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <!-- Titel & tekst -->
+    <h3 class="text-2xl font-bold mb-4 text-white">
+      Contact
+    </h3>
+
+    <p class="text-blue-100 mb-6 max-w-xl">
+      Heb je vragen of wil je contact opnemen?  
+      Stuur me een e-mail of volg me op Instagram.
+    </p>
+
+    <!-- Contact kaart -->
+    <div class="bg-white/90 backdrop-blur rounded-2xl shadow-lg p-6 max-w-md">
+      <p class="text-gray-800 mb-2">
+        <span class="font-semibold">Email:</span>
+        ivanna.torous@student.ap.be
+      </p>
+      <p class="text-gray-800">
+        <span class="font-semibold">Instagram:</span>
+        @Torouskkaaa
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 text-sm py-4 mt-8">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <span>© 2025 Prototyping Tools Ivanna Torous 1GDM2</span>
+  </div>
+</footer>
+
+
+</body>
+</html>

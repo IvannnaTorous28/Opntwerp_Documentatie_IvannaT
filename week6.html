@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-[#070a12] text-white">
+  <!-- subtiele glow achtergrond -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-yellow-300/20 blur-3xl"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-14">
+    <!-- header -->
+    <div class="flex items-center justify-between gap-4 mb-10">
+      <div>
+        <p class="text-white/60 text-sm">Documentatie</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+      </div>
+
+      <a href="documentatie.html" class="text-white/80 hover:text-white transition">
+        ← Terug naar overzicht
+      </a>
+    </div>
+
+    <!-- content card -->
+    <section class="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl">
+      <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
+
+      <p class="text-white/80 leading-relaxed">
+        Tijdens de eerste les hebben we low-fidelity schetsen gemaakt voor onze drie schermen.
+        Deze schetsen hielpen ons om de structuur, inhoud en navigatie van elk scherm te bepalen,
+        voordat we verder gingen met de digitale uitwerking.
+      </p>
+    </section>
+
+    <!-- optioneel: extra blokken -->
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold mb-2">Wat ging goed?</h3>
+        <p class="text-white/70 text-sm">
+          (Schrijf hier kort wat goed ging.)
+        </p>
+      </section>
+
+      <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
+        <p class="text-white/70 text-sm">
+          (Schrijf hier wat je volgende week gaat doen.)
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
