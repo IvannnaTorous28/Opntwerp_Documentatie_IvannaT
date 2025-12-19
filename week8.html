@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
-<body class="min-h-screen bg-[#070a12] text-white">
-  <!-- subtiele glow achtergrond -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-yellow-300/20 blur-3xl"></div>
+
+<body class="min-h-screen text-white relative">
+  <!-- background image -->
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./assets/background.jpg');"
+  >
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 8
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -33,27 +79,330 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste les hebben we low-fidelity schetsen gemaakt voor onze drie schermen.
-        Deze schetsen hielpen ons om de structuur, inhoud en navigatie van elk scherm te bepalen,
-        voordat we verder gingen met de digitale uitwerking.
+      Tijdens les week 8 waren we bezig met het verder uitwerken van onze website en het omzetten van onze schermen naar een app-ontwerp. We hebben gekeken hoe onze website en prototypes beter kunnen worden aangepast voor gebruik als app. We hebben geleerd hoe we de lay-out en navigatie kunnen verbeteren, zodat het makkelijker is voor gebruikers om door de app te gaan. Ook hebben we geoefend met het maken van interactieve elementen die goed werken op mobiele apparaten.
       </p>
     </section>
+<!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Ontwerpschetsen</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/schets app.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is een schets van het wagonscherm, waarbij ik het oorspronkelijke scherm heb vertaald naar een app-indeling. In deze schets heb ik de belangrijkste informatie behouden, zoals de datum en tijd bovenaan, gevolgd door de naam van de trein en de rijrichting. Vervolgens is er een sectie met het perron, de sector en de aankomststatus. Onderaan heb ik een visuele weergave van de trein toegevoegd, waarin symbolen aangeven wat er in elke wagon te vinden is. Deze indeling is aangepast voor een app-omgeving, waarbij de informatie duidelijk en overzichtelijk wordt gepresenteerd voor mobiele gebruikers.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/schets app2.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Dit is een perronscherm dat ik heb aangepast voor een app-ontwerp. In deze schets heb ik de basisstructuur behouden, met de datum en tijd bovenaan, gevolgd door de naam van de trein en de rijrichting. Daarna is er een sectie met het perron, de sector en de aankomststatus. Onderaan heb ik een visuele weergave van de trein toegevoegd, waarin symbolen aangeven wat er in elke wagon te vinden is. Deze indeling is specifiek ontworpen voor een app-omgeving, waarbij de informatie duidelijk en overzichtelijk wordt gepresenteerd voor mobiele gebruikers.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Schets app 3.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+       dit is een overzichtsscherm dat ik heb aangepast voor een app-ontwerp. In deze schets heb ik de belangrijkste elementen behouden, zoals het logo van de NMBS bovenaan, gevolgd door een zoekbalk voor bestemmingen. Daaronder is er een sectie met snelkoppelingen naar populaire functies, zoals vertrektijden, aankomstinformatie en favorieten. Verderop is er een overzicht van aankomende treinen met hun vertrektijden en perrons. Onderaan heb ik een navigatiebalk toegevoegd met pictogrammen voor verschillende secties van de app. Deze indeling is specifiek ontworpen voor een app-omgeving, waarbij de informatie duidelijk en overzichtelijk wordt gepresenteerd voor mobiele gebruikers.
+      </figcaption>
+    </figure>
+
+  
+
+  </div>
+  <!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Ontwerp</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/scerm1.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is een Figma-ontwerp van het perronscherm, uitgewerkt op basis van mijn schetsen. In dit ontwerp heb ik de basisstructuur verder uitgewerkt, waarbij ik de belangrijkste informatie duidelijk heb weergegeven. 
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/scherm2.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Dit is een Figma-ontwerp van een wagonscherm voor de app, uitgewerkt op basis van mijn eerdere schetsen.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/scerm3.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+       Dit is een overzichtsscherm waarin alle belangrijke informatie samenkomt.
+      </figcaption>
+    </figure>
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/website 8.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Huidige staat van mijn website
+        Dit is een screenshot van de website die ik nu heb aangepast op basis van de feedback van de leerkrachten. Ik heb gewerkt met Tailwind CSS om de opmaak en layout te verbeteren.
+
+        Tijdens het werken gebruikte ik code van de Tailwind-website als basis. Deze code paste ik aan met behulp van ChatGPT door te vragen wat ik nodig had en hoe ik onderdelen kon aanpassen. Na meerdere uren oefenen en aanpassen is dit resultaat ontstaan.
+
+        De website bevat nu animaties, werkende knoppen met JavaScript, een achtergrondafbeelding en meerdere pagina’s. Door deze stappen is de website overzichtelijker, interactiever en professioneler geworden. Ik ben tevreden met de vooruitgang die ik heb gemaakt.  
+      </figcaption>
+    </figure>
+
+</section>
+  </main>
+  
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Tijdens deze week heb ik heel veel gewerkt aan mijn opdracht. Ik merk dat mijn website enorm is gegroeid en er nu veel beter en professioneler uitziet dan eerst. Ook mijn Figma-ontwerpen zijn verder uitgewerkt en verbeterd.
+
+          Door veel tijd te investeren, feedback van de leerkrachten toe te passen en nieuwe tools te gebruiken, heb ik grote vooruitgang gemaakt. Dit motiveert mij om verder te werken en mijn project nog beter te maken.
+      
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          Tegen volgende week moet ik interacties toevoegen aan mijn Figma-schermen. Daarnaast ga ik meer schermen maken voor de app, zoals bijvoorbeeld een registratiescherm. Ook ga ik werkende knoppen instellen die de gebruiker naar de juiste pagina’s sturen.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>

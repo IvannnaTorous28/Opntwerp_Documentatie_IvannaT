@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
+
 <body class="min-h-screen text-white relative">
   <!-- background image -->
   <div
@@ -18,10 +31,42 @@
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 2
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -34,25 +79,179 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste lesweek kregen we een uitgebreide uitleg over de opdracht. In diezelfde week zijn we al gestart met het uitwerken van low-fidelity ontwerpen voor drie schermen: het overzichtsscherm, het persoonscherm en het wagonscherm. Deze eerste schetsen waren bewust eenvoudig en schematisch, omdat ze bedoeld waren om de basisstructuur en functionaliteit vast te leggen. Ze vormden een belangrijk startpunt in ons ontwerpproces.
+       Deze week zijn we verdergegaan met het werken aan low-fi ontwerpen. Ik heb mijn eerdere schetsen licht verbeterd en daarnaast ook schetsen gemaakt van het wagonscherm, aangezien ik dit scherm vorige week nog niet had uitgewerkt.
       </p>
     </section>
+ <!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Ontwerpschetsen</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Overzichtscherm.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is het vertrekscherm in een verbeterde versie. Tijdens de les heb ik feedback gekregen van de docent, waarbij werd aangegeven dat mijn schetsen meer structuur moesten hebben en opgebouwd moesten zijn volgens een raster. Daarnaast moest ik beter nadenken over de plaatsing van de belangrijkste informatie. Ik heb deze feedback meegenomen en op basis daarvan een snelle, maar duidelijk gestructureerde schets gemaakt.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Perronscherm.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Dit is het perronscherm, waarin ik de basisstructuur heb uitgewerkt van wat er op het scherm te zien moet zijn.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Wagonscherm.jpg"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+       Dit is het wagonscherm dat ik vorige week nog niet had uitgewerkt. In dit ontwerp heb ik vrij gedetailleerd aangegeven welke informatie op dit scherm moet worden weergegeven. Bovenaan heb ik ruimte voorzien voor de datum en tijd, omdat gebruikers hier doorgaans als eerste naar kijken. Daarnaast is er een sectie met de naam van de trein en de rijrichting. De volgende sectie toont het perron en de sector, evenals de aankomststatus. Onderaan bevindt zich een visuele weergave van de trein, waarin symbolen aangeven wat zich in elke wagon bevindt. Op deze manier wordt de informatie duidelijk en toegankelijk gepresenteerd, zodat iedereen deze kan begrijpen, ongeacht de taal.
+      </figcaption>
+    </figure>
+
+    
+
+  </div>
+</section>
+
+
+  </main>
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Deze week was er geen specifieke opdracht, maar we hebben wel feedback gekregen van onze docenten. Op basis daarvan konden we onze schetsen verder verbeteren. Daarnaast hadden we de rest van de les de tijd om zelfstandig verder te werken.
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          De volgende stap is het uitwerken van mid-fi ontwerpen en het starten van het werk in Figma.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>

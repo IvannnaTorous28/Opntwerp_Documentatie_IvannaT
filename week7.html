@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
-<body class="min-h-screen bg-[#070a12] text-white">
-  <!-- subtiele glow achtergrond -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-yellow-300/20 blur-3xl"></div>
+
+<body class="min-h-screen text-white relative">
+  <!-- background image -->
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./assets/background.jpg');"
+  >
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 7
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -33,27 +79,116 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste les hebben we low-fidelity schetsen gemaakt voor onze drie schermen.
-        Deze schetsen hielpen ons om de structuur, inhoud en navigatie van elk scherm te bepalen,
-        voordat we verder gingen met de digitale uitwerking.
+       In week 7 zijn we verder gegaan met het werken aan onze websites. We zijn begonnen met het leren van Tailwind CSS. We hebben geoefend met hoe je Tailwind toevoegt aan je website en hoe je het correct instelt.
+
+       Daarna zijn we verder gaan werken met Tailwind door kleuren, typografie en layout toe te passen. Op deze manier hebben we geleerd hoe Tailwind helpt om sneller en overzichtelijker te stylen met kant-en-klare classes.
       </p>
     </section>
+ <!-- image gallery -->
+<section class="mt-10">
+  
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/website taiwind.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> In week 7 heb ik mijn website omgezet naar Tailwind CSS. Dit betekent dat mijn vorige CSS niet meer wordt gebruikt en dat de styling nu op een andere manier wordt ingesteld met Tailwind-classes.
+
+        Op dit moment ziet mijn website er eenvoudiger uit, omdat ik opnieuw moet beginnen met het opmaken van de pagina’s. Dit is een belangrijk leerproces, omdat ik leer hoe ik layout, kleuren en typografie kan toepassen met Tailwind in plaats van gewone CSS.
+
+        Deze week heb ik vooral geoefend met het correct instellen van Tailwind en het begrijpen van hoe het werkt. In de volgende stappen ga ik mijn website verder opbouwen en verbeteren met Tailwind CSS.
+        
+      </figcaption>
+    </figure>
+
+    
+
+
+  </main>
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Deze week is het gelukt om mijn website over te zetten naar Tailwind CSS. Daar ben ik blij mee, omdat dit een belangrijke stap was. Ook al had ik niet veel tijd om eraan te werken, is het toch gelukt om Tailwind correct op mijn website te installeren en werkend te krijgen. Dit was een leerzaam proces, omdat ik nu begrijp hoe Tailwind werkt en hoe ik het kan gebruiken voor mijn website.
+      
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          Volgende week ga ik hier verder mee werken en mijn website verder opbouwen en verbeteren.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>

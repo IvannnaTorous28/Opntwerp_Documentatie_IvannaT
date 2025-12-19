@@ -4,8 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tailwind 10</title>
-
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+  
   <link href="dist/output.css" rel="stylesheet">
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
+
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
 
 <body
@@ -29,6 +46,7 @@
 </h1>
 
 
+
     <!-- Navigatie -->
     <nav class="flex gap-8 text-sm font-semibold text-blue-100">
       <a
@@ -44,6 +62,14 @@
         Over het vak
       </a>
     </nav>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
 
   </div>
 </header>
@@ -70,6 +96,13 @@
         Prototyping Tools. Ik toon mijn stappen, keuzes en het eindresultaat
         van de opdracht.
       </p>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
 
       <a
         href="documentatie.html"
@@ -180,6 +213,11 @@
     <span>© 2025 Prototyping Tools Ivanna Torous 1GDM2</span>
   </div>
 </footer>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
 
 
 </body>

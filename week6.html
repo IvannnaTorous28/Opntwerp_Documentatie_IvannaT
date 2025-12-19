@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
-<body class="min-h-screen bg-[#070a12] text-white">
-  <!-- subtiele glow achtergrond -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-yellow-300/20 blur-3xl"></div>
+
+<body class="min-h-screen text-white relative">
+  <!-- background image -->
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./assets/background.jpg');"
+  >
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 6
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -33,27 +79,153 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste les hebben we low-fidelity schetsen gemaakt voor onze drie schermen.
-        Deze schetsen hielpen ons om de structuur, inhoud en navigatie van elk scherm te bepalen,
-        voordat we verder gingen met de digitale uitwerking.
+       Website & knoppen
+       In week 6 zijn we begonnen met het maken van onze eigen website. We hebben gewerkt met knoppen en eenvoudige interacties. De knoppen reageren op hover en klik, zodat ze echt werken voor de gebruiker. Hierdoor hebben we geleerd hoe we onze website interactiever en gebruiksvriendelijker kunnen maken.
       </p>
     </section>
+ <!-- image gallery -->
+<section class="mt-10">
+  
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Website 6.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> In week 6 heb ik verder gewerkt aan mijn eigen website op basis van de les. Ik heb een navigatiemenu gemaakt met links naar verschillende lesweken, zodat elke week een aparte pagina heeft. Hierdoor is de website overzichtelijk en makkelijk te gebruiken.
+        Daarnaast heb ik knoppen gemaakt met een hover-effect en een klik-effect. Wanneer je met de muis over de knop gaat, verandert de knop van uiterlijk. Dit zorgt voor meer interactie en maakt de website gebruiksvriendelijker.
+        Ook heb ik geleerd hoe HTML en CSS samen gebruikt worden om zowel de structuur als de opmaak van de website te maken. Deze week heb ik vooral geoefend met meerdere pagina’s, navigatie en interactieve knoppen.
+        
+      </figcaption>
+    </figure>
+
+    <section class="mx-auto max-w-5xl px-4 py-10">
+  <div class="flex items-center justify-between gap-4">
+    <h2 class="text-xl font-semibold text-slate-900">Mijn documentatie (preview)</h2>
+
+    <a
+      href="https://radiant-mooncake-6b7438.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-700"
+    >
+      Open in nieuw tabblad
+    </a>
+  </div>
+
+  <div class="mt-5 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+    <div class="aspect-video w-full">
+      <iframe
+        src="https://radiant-mooncake-6b7438.netlify.app/"
+        title="Mijn documentatie"
+        class="h-full w-full"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+   <figcaption
+  class="inline-block text-sm text-gray-900 leading-snug p-3 rounded-2xl
+         shadow-md border border-black/10
+         bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+>
+  Dit is de link naar mijn eigen website die ik in week 6 heb gemaakt.
+  Tijdens deze les heb ik geleerd hoe ik mijn website online kan publiceren
+  met behulp van GitHub en Netlify.
+</figcaption>
+
+
+  </div>
+</section>
+
+
+  </main>
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Tijdens deze week heb ik een website gemaakt en ik vind deze echt goed, omdat het mijn eerste website is die ik zelf heb gemaakt. Ik zie dat de website nog niet perfect is, maar ik heb wel de dingen gebruikt die we in de les hebben geleerd.
+
+          Het was soms moeilijk om zelf code te schrijven, maar door video-tutorials op YouTube te volgen heb ik beter begrepen hoe alles werkt. Op die manier is het mij gelukt om deze website te maken en ben ik trots op het resultaat.
+      
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          Volgende week gaan we verder werken aan onze websites en onze Figma-prototypes verder verbeteren. We zullen meer leren over hoe we onze websites kunnen laten werken met knoppen en links, zodat gebruikers gemakkelijk kunnen navigeren. Daarnaast zullen we ook kijken naar manieren om onze ontwerpen nog beter te maken door feedback van anderen te gebruiken.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>

@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
-<body class="min-h-screen bg-[#070a12] text-white">
-  <!-- subtiele glow achtergrond -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-yellow-300/20 blur-3xl"></div>
+
+<body class="min-h-screen text-white relative">
+  <!-- background image -->
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./assets/background.jpg');"
+  >
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70"></div>
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 4
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -33,27 +79,214 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste les hebben we low-fidelity schetsen gemaakt voor onze drie schermen.
-        Deze schetsen hielpen ons om de structuur, inhoud en navigatie van elk scherm te bepalen,
-        voordat we verder gingen met de digitale uitwerking.
+       Deze week kregen we uitleg over kleurkeuze, typografie en stijlen, en over hoe je in het algemeen een harmonieus ontwerp kunt bereiken. Daarnaast hebben we deze richtlijnen toegepast en keuzes gemaakt voor onze eigen opdracht. Tegen dinsdag moeten we onze Figma-link uploaden met drie uitgewerkte schermen. Deze schermen tonen de eerste opzet van het ontwerp en vormen de basis voor verdere iteraties in de volgende weken.
       </p>
     </section>
+ <!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Ontwerp schermen</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Component.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Op deze afbeelding is een component te zien die we tijdens de les van de docenten hebben geleerd te maken. Vervolgens heb ik alle schermen opgebouwd met behulp van componenten, wat erg handig en efficiënt bleek te zijn.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Perronscherm figma.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Dit is het Perronscherm dat ik in Figma heb uitgewerkt voor de trein- en route-informatie. Ik heb hierbij gebruikgemaakt van mijn gekozen kleurenpalet en typografie om een duidelijke en consistente visuele stijl te behouden. Bovenaan wordt de belangrijkste informatie weergegeven, zoals de tijd, het perron en de bestemming. In het midden is een visuele weergave van de route te zien, waarmee gebruikers snel inzicht krijgen in de richting en tussenstops. Onderaan staat een overzicht van de treinvertrekken met statusinformatie, zoals vertragingen of annuleringen. Bij het ontwerp heb ik rekening gehouden met leesbaarheid, hiërarchie en gebruiksvriendelijkheid.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Waggonscherm figma.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+     Dit is het wagonscherm dat ik heb uitgewerkt in Figma. Op dit scherm wordt duidelijk weergegeven hoe de trein is opgebouwd en welke functies zich in elke wagon bevinden. Bovenaan staat de belangrijkste informatie, zoals de vertrektijd, de trein, het perron, de sector en de status van de trein. In het midden is een visuele weergave van de wagons te zien, waarbij iconen aangeven waar zich bijvoorbeeld fietsenplaatsen, rolstoeltoegankelijke plekken, een bar of familiezones bevinden. Onderaan wordt de rijrichting van de trein weergegeven. Bij dit ontwerp heb ik extra aandacht besteed aan overzichtelijkheid en het gebruik van iconen, zodat de informatie voor iedereen begrijpelijk is, ongeacht de taal.
+      </figcaption>
+    </figure>
+ <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/Overzichtscherm figma.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is het overzichtsscherm dat ik heb uitgewerkt in Figma. Op dit scherm worden alle vertrekkende treinen overzichtelijk weergegeven in een tabel met de belangrijkste informatie, zoals vertrektijd, treinnummer, bestemming, perron en status. Door gebruik te maken van kleurcodes is in één oogopslag te zien of een trein op tijd is, vertraging heeft of geannuleerd is. Bij het ontwerp heb ik rekening gehouden met leesbaarheid, duidelijke hiërarchie en een logische indeling, zodat gebruikers snel de juiste informatie kunnen vinden.
+      </figcaption>
+    </figure>
+
+    
+
+  </div>
+</section>
+
+
+  </main>
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Deze week ging het uitwerken van de schermen in Figma goed. Ik heb mijn low-fi schetsen succesvol omgezet naar digitale ontwerpen en daarbij gewerkt met componenten en een vaste structuur. Het toepassen van mijn gekozen kleuren en typografie zorgde voor een consistente uitstraling tussen de verschillende schermen. Door in Figma te werken kon ik mijn ontwerpen verfijnen en sneller aanpassingen doorvoeren, wat het ontwerpproces efficiënter maakte.
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          Volgende week zullen we beginnen met het leren van coderen. We zullen de basisprincipes van HTML en CSS behandelen en leren hoe we onze ontwerpen kunnen omzetten naar werkende webpagina's. Dit zal een nieuwe uitdaging zijn, maar ik kijk ernaar uit om mijn ontwerpvaardigheden uit te breiden met technische kennis en praktische ervaring in webontwikkeling.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>

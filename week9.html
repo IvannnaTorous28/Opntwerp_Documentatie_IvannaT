@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind 10</title>
+  <title>Week 1 – Documentatie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @media print {
+    /* verberg dingen die je niet in pdf wil */
+    header, nav, #contact, footer { display: none !important; }
 
-  <link href="dist/output.css" rel="stylesheet">
+    /* achtergrondafbeelding weg (vaak beter voor print) */
+    body { background-image: none !important; }
+
+    /* zorg voor nette marges */
+    @page { margin: 18mm; }
+  }
+</style>
+
 </head>
+
 <body class="min-h-screen text-white relative">
   <!-- background image -->
   <div
@@ -18,10 +31,42 @@
 
   <main class="max-w-4xl mx-auto px-4 py-14">
     <!-- header -->
+     <style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+
     <div class="flex items-center justify-between gap-4 mb-10">
       <div>
         <p class="text-white/60 text-sm">Documentatie</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">Week 1</h1>
+     <h1
+  class="text-3xl md:text-4xl font-extrabold
+         bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500
+         bg-[length:200%_200%]
+         bg-clip-text text-transparent
+         animate-[gradient_6s_ease_infinite]">
+  Week 9
+</h1>
+<div class="inline-flex items-center gap-2
+            px-4 py-1 rounded-full
+            border border-white/20
+            bg-white/5
+            text-sm text-white/70">
+  <span class="font-medium text-white">Ivanna Torous</span>
+  <span class="opacity-60">• 1GDM2</span>
+</div>
+<button
+  onclick="downloadPDF()"
+  class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-xl font-semibold
+         border border-white/20 hover:bg-white/20 transition"
+>
+  Download PDF
+</button>
+
+
       </div>
 
       <a href="documentatie.html" class="text-white/80 hover:text-white transition">
@@ -34,25 +79,271 @@
       <h2 class="text-xl font-semibold mb-4">Wat hebben we gedaan?</h2>
 
       <p class="text-white/80 leading-relaxed">
-        Tijdens de eerste lesweek kregen we een uitgebreide uitleg over de opdracht. In diezelfde week zijn we al gestart met het uitwerken van low-fidelity ontwerpen voor drie schermen: het overzichtsscherm, het persoonscherm en het wagonscherm. Deze eerste schetsen waren bewust eenvoudig en schematisch, omdat ze bedoeld waren om de basisstructuur en functionaliteit vast te leggen. Ze vormden een belangrijk startpunt in ons ontwerpproces.
+      Deze week werkten we verder aan de website en de Figma-prototypes. Dit was een goed contactmoment om feedback te vragen en beter te begrijpen wat de leerkrachten van onze opdracht verwachten. Door deze feedback weet ik nu beter wat ik kan verbeteren en waar ik extra aandacht aan moet besteden.
       </p>
     </section>
+<!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Website-paginas</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/eerste pagina.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is hoe ik mijn website heb aangepast op basis van de feedback van de leerkracht. Ik heb mijn naam en mijn groep toegevoegd aan de pagina, zodat duidelijk is van wie de website is.
+
+        Daarnaast heb ik de navigatie aangepast om de website overzichtelijker en gebruiksvriendelijker te maken. Ook heb ik een knop toegevoegd waarmee je een PDF-versie van de website kunt downloaden.
+
+        Tot slot heb ik een gradient toegepast op de titel van de pagina, zodat deze visueel aantrekkelijker is en beter opvalt. Door deze aanpassingen oogt de website nu professioneler en duidelijker.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/tweede pagina.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        Dit is de pagina met het overzicht van alle documentatie per week. Voor deze pagina heb ik bijna dezelfde opmaak gebruikt als op de homepagina, zodat de website consistent blijft.
+
+        Ik heb hier opnieuw mijn naam en groep toegevoegd, evenals een knop om de documentatie als PDF te downloaden. Elke week heeft een eigen kaart met een link naar de bijbehorende pagina, zodat de documentatie overzichtelijk en makkelijk te navigeren is. Door deze aanpassingen is de documentatiepagina nu duidelijker en gebruiksvriendelijker.
+      </figcaption>
+    </figure>
+
+    <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/derde pagina.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <figcaption
+        class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+      Dit is een voorbeeld van één van de weekpagina’s. Aan deze pagina heb ik veel gewerkt om een duidelijke en overzichtelijke structuur te maken.
+
+Bovenaan de pagina staat altijd de titel van de week, weergegeven met een gradient en contrasterende kleuren. Daarnaast zijn mijn naam en groep zichtbaar, samen met een knop om de pagina als PDF te downloaden en een knop om terug te gaan naar het overzicht.
+
+Onder deze header staat een sectie waarin wordt uitgelegd wat we deze week hebben gedaan. Daaronder volgen afbeeldingen van mijn schetsen, die zijn vormgegeven alsof ze met plakband vastzitten. Naast de afbeeldingen staat een tekstvak dat eruitziet als oud papier, wat zorgt voor een speels en creatief effect.
+
+Onderaan de pagina heb ik een footer toegevoegd met informatie over wat deze week goed ging en wat ik tegen volgende week ga doen. Ik ben erg trots op deze pagina, omdat ik hier de meeste tijd in heb gestoken en het resultaat goed laat zien wat ik heb geleerd.
+      </figcaption>
+    </figure>
+
+  
+
+  </div>
+  <!-- image gallery -->
+<section class="mt-10">
+  <h3 class="text-lg font-semibold mb-4">Figma-schermen</h3>
+
+  <!-- 2 per rij + grotere afbeeldingen -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- image 1 -->
+   <figure class="relative space-y-3">
+  <!-- tape 1 -->
+  <div
+    class="absolute -top-4 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/70
+           rotate-[-4deg] shadow z-10"
+  ></div>
+
+  <!-- tape 2 -->
+  <div
+    class="absolute -top-2 left-1/2 -translate-x-1/2
+           w-24 h-6 bg-yellow-200/60
+           rotate-[6deg] shadow z-10"
+  ></div>
+
+  <img
+    src="./assets/figmaworkflow.png"
+    alt="Overzichtsscherm – eerste schets"
+    class="cursor-pointer rounded-2xl object-cover h-72 w-full
+           hover:scale-[1.02] transition duration-300
+           shadow-xl"
+    onclick="openLightbox(this.src)"
+  />
+</figure>
+
+
+      <!-- papier caption -->
+      <figcaption
+       class="text-sm text-gray-900 leading-relaxed p-4 rounded-2xl shadow-md border border-black/10
+               bg-[url('./assets/oudepapir.jpg')] bg-cover bg-center"
+      >
+        <span class="font-semibold"></span> Dit is een screenshot van mijn Figma-bestand. Ik heb mijn belangrijkste schermen aangepast op basis van de feedback van de leerkracht. Hierbij heb ik gewerkt met grids en heb ik mijn componenten aangepast, zodat alles correct is uitgelijnd en consistent oogt.
+
+Daarnaast heb ik extra pagina’s toegevoegd, zoals een welkomstpagina, inlog- en registratieschermen en inlogpagina’s met sociale media. Ook heb ik een homepagina ontworpen die de gebruiker ziet na het inloggen of registreren.
+
+Verder heb ik interacties toegevoegd aan de knoppen. In eerste instantie gebruikte ik hover-effecten, maar na feedback van de leerkracht heb ik deze verwijderd, omdat hover niet zichtbaar is in een app. De knoppen werken nu met klik-interacties die de gebruiker naar de juiste pagina sturen.
+
+Op basis van de laatste feedback moet ik de homepagina en het wagonscherm nog verder verbeteren. Dit ga ik in de volgende stap verder uitwerken.
+      </figcaption>
+    </figure>
+
+    
+    
+
+  
+
+     
+
+  
+
+
+      
+
+  
+        <a
+  href="https://www.figma.com/design/MFDY9SrE6pNR7F0kdTZdzn/Schermen?t=P5pUSG8upLmnUqsq-1"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-block rounded-2xl border border-black/20
+         bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900
+         shadow-sm backdrop-blur
+         transition hover:-translate-y-0.5 hover:shadow-md"
+>
+  Open Figma design
+</a>
+
+    </figure>
+
+</section>
+  </main>
+  
 
     <!-- optioneel: extra blokken -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat ging goed?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier kort wat goed ging.)
+          Tijdens deze week heb ik heel veel gewerkt aan zowel mijn website als mijn Figma-ontwerpen. Voor de website heb ik alles aangepast en alle informatie toegevoegd. In Figma heb ik mijn fouten verbeterd. Ik ben daar nog niet helemaal klaar mee, maar ik ben al bijna zover.
+
+Tijdens de les heb ik aan de leerkracht gevraagd hoe ik mijn website online kon zetten via GitHub en Netlify. Ik had een probleem met de mappenstructuur op GitHub. De leerkracht heeft een fout in mijn bestanden gevonden en mij daarbij geholpen.
+
+We hebben uiteindelijk een juiste mapstructuur gebruikt en mijn code daarin geplaatst. Daarna heeft de leerkracht mij geholpen om mijn website correct te koppelen aan Netlify. Nu staat mijn volledige website online en kan deze door iedereen bekeken worden.
+      
         </p>
       </section>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-6">
         <h3 class="font-semibold mb-2">Wat is de volgende stap?</h3>
         <p class="text-white/70 text-sm">
-          (Schrijf hier wat je volgende week gaat doen.)
+          Ik moet mijn ontwerp verder uitwerken en afronden.
         </p>
       </section>
     </div>
   </main>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+</script>
+
 </body>
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+  <!-- lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+  onclick="closeLightbox()"
+>
+  <img
+    id="lightbox-img"
+    class="max-w-[90%] max-h-[90%] rounded-2xl shadow-2xl"
+  />
+</div>
+</html>
